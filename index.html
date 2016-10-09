@@ -1,7 +1,56 @@
 <!DOCTYPE html>
-  <html>
+  <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified Bootstrap, jQuery and Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="continer">
+      <div class="jumbotron">
+        <div id="title"><h1>Radio<font color="#ff0000">A</font>ctive</h1></div>
+        <br>
+          Search by:
+        <br>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#artist">Artist</button>
+        <button class="btn btn-primary" data-toggle="collapse"data-target="#song">Song</button>
+        <button class="btn btn-primary" data-toggle="collapse"data-target="#genre">Genre</button>
 
+        <div id="artist" class="collapse">
+          <br>
+          <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+        <div id="song" class="collapse">
+        <br>
+        <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
+        </div>
+        <div id="genre" class="collapse">
+          <br>
+          <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+      </div>
+    </div>
 
+    </body>
 
-
-</htmL>
+</html>
