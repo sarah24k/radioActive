@@ -10,6 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
         <link href="main.css" rel="stylesheet">
+
     </head>
     <body>
     <div class="continer">
@@ -18,36 +19,58 @@
         <br>
           Search by:
         <br>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#artist">Artist</button>
-        <button class="btn btn-primary" data-toggle="collapse"data-target="#song">Song</button>
-        <button class="btn btn-primary" data-toggle="collapse"data-target="#genre">Genre</button>
+        <div class="drop-groups">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#artist" data-parent="#drop-groups" id="art-drop">Artist</button>
+        <button class="btn btn-primary" data-toggle="collapse"data-target="#song"  data-parent="#drop-groups" id="song-drop">Song</button>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Genre</button>
+              <ul class="dropdown-menu scrollable-menu" role="menu">
+                <a href="#"><li>Alternative</li></a>
+                <a href="#"><li>Blues</li></a>
+                <a href="#"><li>Classical</li></a>
+                <a href="#"><li>Country</li></a>
+                <a href="#"><li>Decades</li></a>
+                <a href="#"><li>Easy Listening</li></a>
+                <a href="#"><li>Electronic</li></a>
+                <a href="#"><li>Folk</li></a>
+                <a href="#"><li>Inspirational</li></a>
+                <a href="#"><li>Jazz</li></a>
+                <a href="#"><li>Latin</li></a>
+                <a href="#"><li>Metal</li></a>
+                <a href="#"><li>Misc</li></a>
+                <a href="#"><li>New Age</li></a>
+                <a href="#"><li>Pop</li></a>
+                <a href="#"><li>Public Radio</li></a>
+                <a href="#"><li>R&amp;B and Urban</li></a>
+                <a href="#"><li>Rap</li></a>
+                <a href="#"><li>Reggae</li></a>
+                <a href="#"><li>Rock</li></a>
+                <a href="#"><li>Seasonal and Holiday</li></a>
+                <a href="#"><li>Soundtracks</li></a>
+                <a href="#"><li>Talk</li></a>
+                <a href="#"><li>Themes</li></a>
+              </ul>
+            </div>
 
-        <div id="artist" class="collapse">
+        <div id="artist" class="panel-collapse collapse in" data-toggle="collapse" >
           <br>
           <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
+          <input type="text" class="form-control" placeholder="Search for Artist...">
             <span class="input-group-btn">
               <button class="btn btn-default" type="button">Go!</button>
             </span>
           </div>
         </div>
-        <div id="song" class="collapse">
+        <div id="song" class="panel-collapse collapse in" data-toggle="collapse">
         <br>
         <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
+        <input type="text" class="form-control" placeholder="Search for Song...">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">Go!</button>
           </span>
         </div>
         </div>
-        <div id="genre" class="collapse">
-          <br>
-          <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-          </div>
+<!-- Container & Jumbotron closing divs -->
       </div>
     </div>
 

@@ -30,3 +30,9 @@ body {
 .logo {
   color: rgb(255, 0, 0);
 }
+
+.scrollable-menu {
+  height: auto;
+  max-height: 290px;
+  overflow-x: hidden;
+}
