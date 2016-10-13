@@ -82,12 +82,14 @@ let artist;
 let length;
 let time;
 let songID;
+let mySearch;
+let searchURL;
 
 //$("#art-click").onclick = function() {myFunction()}
 
 function myFunction() {
-	let mySearch = document.getElementById("selection").value;
-	let searchURL = "https://api.spotify.com/v1/search?q=" + mySearch + "&type=track&market=US&f=json";
+	mySearch = document.getElementById("selection").value;
+	searchURL = "https://api.spotify.com/v1/search?q=" + mySearch + "&type=track&market=US&f=json";
 	$.ajax({
 	  url: searchURL,
 	  dataType: "json",
@@ -125,28 +127,13 @@ function myFunction() {
 };
 
 function submitSongs(me) {
-		for (let a = 0; a < 10; a++) {
-			if (document.getElementById("song"+a).checked) {
-				console.log("here");
-				console.log(document.getElementById("span"+a));
-				$(".playlist").append(document.getElementById("span"+a));
-				$(".playlist").append("<br>");
-			}
+	for (let a = 0; a < 10; a++) {
+		if (document.getElementById("song"+a).checked) {
+			console.log("here");
+			console.log(document.getElementById("span"+a));
+			$(".playlist").append(document.getElementById("span"+a));
+			$(".playlist").append("<br>");
 		}
-	};
-  /* .controller('MusicCtrl', [
-    '$scope', '$stateParams', function($scope, $stateParams) {
-      $scope.music = "This is the music!";
-    }
-  ]);
-*/
-
-//Genre Info API
-//    myurl = "http://api.shoutcast.com/legacy/genresearch?k=" + myKey + "&genre=" + {{classic}} + "&limit=20";
-//   $.ajax({
-//        url : myurl,
-//        dataType : "json",
-//        success : function(parsed_json) {
-//          console.log(parsed_json);
-//        }
-//    })
+	}
+	$(".search").empty();
+};
