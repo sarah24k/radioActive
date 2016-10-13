@@ -20,6 +20,7 @@
           $(".closepanel").on("click", function() {
             $("#panel3").collapse('hide');
           });
+/* ensure any open panels are closed before showing selected */
 $('#accordion').on('show.bs.collapse', function () {
     $('#accordion .in').collapse('hide');
 });
@@ -38,9 +39,6 @@ $('#accordion').on('show.bs.collapse', function () {
 </div>
     <!-- templates -->
 <script type="text/ng-template" id="/home.html">
-    <a href="#/Music/">Comments</a>
-
-  {{contents}}
 
 
 <div id="title"><h1>Radio<font color="#ff0000">A</font>ctive</h1></div>
@@ -86,21 +84,15 @@ $('#accordion').on('show.bs.collapse', function () {
   <input type="text" class="form-control" id="selection" placeholder="Search for Artist...">
     <span class="input-group-btn">
 
-      <button ng-click="dataGet()" class="btn btn-default" type="button" id="art-click">Go!</button>
+      <button class="btn btn-default" onclick="myFunction()" type="button" id="art-click">Go!</button>
     </span>
   </div>
 </div>
-<div id="song" class="panel-collapse collapse in" data-toggle="collapse" data-parent="#drop-groups">
-<br>
-<div class="input-group">
-<input type="text" class="form-control" placeholder="Search for Song...">
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Go!</button>
-  </span>
-</div>
+<div class="search">
 </div>
 
-
+<div class="playlist">
+</div>
 
 </div>
 
