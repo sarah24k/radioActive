@@ -1,4 +1,4 @@
-angular.module('radioActive', ['ui.router'])
+var app = angular.module('RadioActive', ['ui.router'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',
