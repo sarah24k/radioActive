@@ -1,27 +1,46 @@
 <!DOCTYPE html>
   <html lang="en">
     <head>
+        <title>Hello Radio</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified Bootstrap, jQuery and Angular -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
         <link href="main.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <script>
+          $("#art-drop").on("click", function() {
+            $("#artist").collapse('show');
+          });
+          $(".closepanel").on("click", function() {
+            $("#panel3").collapse('hide');
+          });
+
+/* ensure any open panels are closed before showing selected */
+$('#accordion').on('show.bs.collapse', function () {
+    $('#accordion .in').collapse('hide');
+});
+        </script>
 
     </head>
-    <body>
+    <body ng-app="radioActive">
     <div class="continer">
       <div class="jumbotron">
+        <script type="text/ng-template" id="/home.html">
+            <a href="#/Music/">Comments</a>
+          {{contents}}
         <div id="title"><h1>Radio<font color="#ff0000">A</font>ctive</h1></div>
         <br>
           Search by:
         <br>
         <div class="drop-groups">
         <button class="btn btn-primary" data-toggle="collapse" data-target="#artist" data-parent="#drop-groups" id="art-drop">Artist</button>
-        <button class="btn btn-primary" data-toggle="collapse"data-target="#song"  data-parent="#drop-groups" id="song-drop">Song</button>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#song"  data-parent="#drop-groups" id="song-drop">Song</button>
         <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Genre</button>
               <ul class="dropdown-menu scrollable-menu" role="menu">
@@ -61,7 +80,7 @@
             </span>
           </div>
         </div>
-        <div id="song" class="panel-collapse collapse in" data-toggle="collapse">
+        <div id="song" class="panel-collapse collapse in" data-toggle="collapse" data-parent="#drop-groups">
         <br>
         <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for Song...">
@@ -70,10 +89,23 @@
           </span>
         </div>
         </div>
-<!-- Container & Jumbotron closing divs -->
-      </div>
-    </div>
 
+
+
+      </div>
+    </script>
+    <script type="text/ng-template" id="/music.html">
+      {{music}}
+    </script>
+
+
+    <!-- Container & Jumbotron closing divs -->
+
+
+<!-- BEGIN: SHOUTCASTWIDGETS.COM CURRENTLY PLAYING WIDGET <div id="BIO"><img src="http://32oneweb.com/client/img//loading.gif" width="191" height="37" /></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery.js">\x3C/script>')</script><script type="text/javascript" id="CurrentlyPlaying" data-username="demo" data-buttons_background="666666" data-buttons_text="FFF" data-buttons_background_hover="000000" data-buttons_background_active="FF0000" data-text="FFFFFF" data-background="fd0000" data-link_color="EEEEEE" data-image="round" data-float="left" data-size="2" data-header_text="FF0000" data-header_size="3" data-border="dashed" data-stage="444444" data-amazon="" data-sevendigital="" data-facebook="yes" data-twitter="yes" data-server="yes" data-listeners="no" data-language="no" data-font="georgia" data-ads="bottom" data-ad_color="FFFFFF" data-sell_ads="no" src="http://32oneweb.com/bio.js"></script> END: SHOUTCASTWIDGETS.COM CURRENTLY PLAYING-->
+    </div>
+</div>
     </body>
 
 </html>
