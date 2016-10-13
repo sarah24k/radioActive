@@ -3,14 +3,6 @@ body {
   padding-bottom: 20px;
 }
 
-<<<<<<< HEAD
-body {
-  padding-top: 80px;
-  padding-bottom: 20px;
-}
-
-=======
->>>>>>> e62f2894bc955aa85caa53a11263c8559542eeea
 @media (min-width: 768px) {
   .container {
     max-width: 730px;
