@@ -40,14 +40,13 @@ $('#accordion').on('show.bs.collapse', function () {
 </div>
     <!-- templates -->
 <script type="text/ng-template" id="/home.html">
-    <a href="#/Music/">Comments</a>
 
-  {{contents}}
+
 <div id="title"><h1>Radio<font color="#ff0000">A</font>ctive</h1></div>
 <br>
   Search by:
 <br>
-<div class="drop-groups">
+<div class="drop-groups"  ng-controller="MainCtrl">
 <button class="btn btn-primary" data-toggle="collapse" data-target="#artist" data-parent="#drop-groups" id="art-drop">Artist</button>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#song"  data-parent="#drop-groups" id="song-drop">Song</button>
 <div class="btn-group">
@@ -83,9 +82,10 @@ $('#accordion').on('show.bs.collapse', function () {
 <div id="artist" class="panel-collapse collapse in" data-toggle="collapse" >
   <br>
   <div class="input-group">
-  <input type="text" class="form-control" placeholder="Search for Artist...">
+  <input type="text" class="form-control" id="selection" placeholder="Search for Artist...">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="button">Go!</button>
+
+      <button ng-click="dataGet()" class="btn btn-default" type="button" id="art-click">Go!</button>
     </span>
   </div>
 </div>
@@ -105,7 +105,7 @@ $('#accordion').on('show.bs.collapse', function () {
 
 </script>
 <script type="text/ng-template" id="/music.html">
-{{music}}
+{{data}}
 </script>
 
     </body>
