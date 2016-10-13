@@ -7,7 +7,16 @@ var myurl;
          url : myurl,
          dataType : "json",
          success : function(parsed_json) {
+           var currenttrack = parsed_json['response']['data']['stationlist']['station'][0]['ct'];
+           var genre = parsed_json['response']['data']['stationlist']['station'][0]['genre'];
+           var id = parsed_json['response']['data']['stationlist']['station'][0]['id'];
            console.log(parsed_json);
+           var radioname = parsed_json['response']['data']['stationlist']['station'][0]['name'];
+           var audioURL = "http://yp.shoutcast.com/sbin/tunein-station.pls?id=" + id;
+           console.log("now playing: " + currenttrack);
+           audio.src = audioURL;
+           audio.currentTime = 0;
+           audio.play();
          }
     });
 
