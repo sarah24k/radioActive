@@ -1,39 +1,113 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>radioActive</title>
-  </head>
-  <body>
-    <!--<div ng-app='app' ng-controller='mainCtrl'>
-      <h1>Create new user</h1>
-      <form name='userForm' ng-submit='addNew(userForm)'>
+  <html lang="en">
+    <head>
+        <title>Hello Radio</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified Bootstrap, jQuery and Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+        <link href="main.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <script>
+          $("#art-drop").on("click", function() {
+            $("#artist").collapse('show');
+          });
+          $(".closepanel").on("click", function() {
+            $("#panel3").collapse('hide');
+          });
+/* ensure any open panels are closed before showing selected */
+$('#accordion').on('show.bs.collapse', function () {
+    $('#accordion .in').collapse('hide');
+});
+        </script>
 
-        <input placeholder='Name' ng-model='userForm.name'/>
-        <input placeholder='Image Url' ng-model='userForm.url'/>
-        <input placeholder='E-mail' ng-model='userForm.email' />
-        <button type='submit'>Add New</button>
-      </form>
+    </head>
+    <body ng-app="RadioActive">
+    <div class="continer">
+      <div class="jumbotron">
+            <ui-view></ui-view>
 
-      <ul class='User-list'>
-        <li ng-repeat='foobar in users'>
-          <avatar user='foobar' />
-          <!--<div class='Avatar'>
-            <img ng-src='{{user.avatarUrl}}' />
-            <h4>{{user.name}}</h4>
-          </div>
-        </li>
+
+
+    <!-- Container & Jumbotron closing divs -->
+  </div>
+</div>
+    <!-- templates -->
+<script type="text/ng-template" id="/home.html">
+    <a href="#/Music/">Comments</a>
+
+  {{contents}}
+<div id="title"><h1>Radio<font color="#ff0000">A</font>ctive</h1></div>
+<br>
+  Search by:
+<br>
+<div class="drop-groups">
+<button class="btn btn-primary" data-toggle="collapse" data-target="#artist" data-parent="#drop-groups" id="art-drop">Artist</button>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#song"  data-parent="#drop-groups" id="song-drop">Song</button>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Genre</button>
+      <ul class="dropdown-menu scrollable-menu" role="menu">
+        <a href="#"><li>Alternative</li></a>
+        <a href="#"><li>Blues</li></a>
+        <a href="#"><li>Classical</li></a>
+        <a href="#"><li>Country</li></a>
+        <a href="#"><li>Decades</li></a>
+        <a href="#"><li>Easy Listening</li></a>
+        <a href="#"><li>Electronic</li></a>
+        <a href="#"><li>Folk</li></a>
+        <a href="#"><li>Inspirational</li></a>
+        <a href="#"><li>Jazz</li></a>
+        <a href="#"><li>Latin</li></a>
+        <a href="#"><li>Metal</li></a>
+        <a href="#"><li>Misc</li></a>
+        <a href="#"><li>New Age</li></a>
+        <a href="#"><li>Pop</li></a>
+        <a href="#"><li>Public Radio</li></a>
+        <a href="#"><li>R&amp;B and Urban</li></a>
+        <a href="#"><li>Rap</li></a>
+        <a href="#"><li>Reggae</li></a>
+        <a href="#"><li>Rock</li></a>
+        <a href="#"><li>Seasonal and Holiday</li></a>
+        <a href="#"><li>Soundtracks</li></a>
+        <a href="#"><li>Talk</li></a>
+        <a href="#"><li>Themes</li></a>
       </ul>
-    </div>-->
-    <p>this is a paragraph</p>
-    <ul class="playlist">
-      
-    </ul>
-  
+    </div>
 
-  </body>
+<div id="artist" class="panel-collapse collapse in" data-toggle="collapse" >
+  <br>
+  <div class="input-group">
+  <input type="text" class="form-control" placeholder="Search for Artist...">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Go!</button>
+    </span>
+  </div>
+</div>
+<div id="song" class="panel-collapse collapse in" data-toggle="collapse" data-parent="#drop-groups">
+<br>
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Search for Song...">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button">Go!</button>
+  </span>
+</div>
+</div>
+
+
+
+</div>
+
+</script>
+<script type="text/ng-template" id="/music.html">
+{{music}}
+</script>
+
+    </body>
+
+</html>  </body>
 </html>
